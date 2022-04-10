@@ -19,7 +19,7 @@ INSERT INTO users (full_name, title)
     ("Tamama", "Second Class Soldier 二等兵"),
     ("Kururu", "Master Sergeant 曹長");
 INSERT INTO users (full_name, title, delete_flag)
-    VALUES ("Dororo", "kuu kukuku. CTF_{Invasion_Start}<br>You can find the bonus flag at another table.<br>'UNION' is useful", TRUE); /*1st Flag plus Hint*/
+    VALUES ("Dororo", "kuu kukuku. CTF_{Invasion_Start}. You can find the bonus flag at another table. 'UNION' is useful", TRUE); /*1st Flag plus Hint*/
 
 DROP TABLE IF EXISTS flag;
 CREATE TABLE flag (
