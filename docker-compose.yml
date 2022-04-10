@@ -1,0 +1,30 @@
+version: '3.3'
+services:
+  app-python:
+    container_name: app-python
+    build:
+      context: ./python
+      dockerfile: Dockerfile
+    tty: true
+    volumes:
+      - ./python/src:/app
+    ports:
+      - "80:8000"
+    networks:
+      - ctf-network    
+  db1:
+    container_name: mysql
+    build:
+      context: ./mysql
+      dockerfile: Dockerfile
+    environment:
+      - MYSQL_USER=keroro
+      - MYSQL_PASSWORD=gammanebulaplanet58
+      - MYSQL_ROOT_PASSWORD=gammanebulaplanet58
+    volumes:
+      - ./mysql/mysql_conf:/etc/mysql/conf.d
+      - ./mysql/initdb.d:/docker-entrypoint-initdb.d      
+    networks:
+      - ctf-network
+networks:
+  ctf-network:
